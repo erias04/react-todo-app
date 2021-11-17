@@ -1,8 +1,8 @@
 
-const Header = (props) => {
+const Header = () => {
     return (
         <header>
-            <h1 className="header">erias ToDo App {props.title}</h1>
+            <h1 className="header">erias ToDo App</h1>
         </header>
     )
 }
