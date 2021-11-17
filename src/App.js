@@ -1,11 +1,9 @@
 import Header from './components/Header'
 
 function App() {
-  const name = 'erias'
-
   return (
     <div className="container">
-      <Header />
+      <Header title='erias ToDo App' />
     </div>
   );
 }

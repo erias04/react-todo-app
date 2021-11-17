@@ -1,11 +1,15 @@
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
-            <h1 className="header">erias ToDo App</h1>
+            <h1 className="header">{props.title}</h1>
         </header>
     )
 }
+
+Header.defaultProps = {
+    title: 'erias ToDo App',
+  }
 
 export default Header
  
