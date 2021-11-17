@@ -1,7 +1,7 @@
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <h1 className="header">erias Todo App</h1>
     </div>
   );
