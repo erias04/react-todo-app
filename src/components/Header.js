@@ -1,9 +1,9 @@
 
 const Header = () => {
     return (
-        <div>
-            
-        </div>
+        <header>
+            <h1 className="header">erias ToDo App</h1>
+        </header>
     )
 }
 

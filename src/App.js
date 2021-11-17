@@ -1,10 +1,11 @@
+import Header from './components/Header'
 
 function App() {
   const name = 'erias'
 
   return (
     <div className="container">
-      <h1 className="header">{name} Todo App</h1>
+      <Header />
     </div>
   );
 }
