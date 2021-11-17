@@ -1,8 +1,9 @@
 
 const Header = (props) => {
     return (
-        <header>
+        <header className='header'>
             <h1 className="header">{props.title}</h1>
+            <button className="add_button">Add</button>
         </header>
     )
 }

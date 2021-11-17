@@ -27,7 +27,7 @@ body {
   margin-bottom: 20px;
 }
 
-.btn {
+.add_button {
   display: inline-block;
   background: #000;
   color: #fff;
@@ -41,15 +41,15 @@ body {
   font-family: inherit;
 }
 
-.btn:focus {
+.add_button:focus {
   outline: none;
 }
 
-.btn:active {
+.add_button:active {
   transform: scale(0.98);
 }
 
-.btn-block {
+.add_button-block {
   display: block;
   width: 100%;
 }
