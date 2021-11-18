@@ -33,14 +33,17 @@ function App() {
   // Toggle Reminder
   const toggleReminder = (id) => {
     setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task
-    )
-    )
+    ))}
+
+  // Add Task
+  const addTask = (task) => {
+    console.log(task);
   }
 
   return (
     <div className="container">
       <Header title='erias ToDo App' />
-      <AddTask />
+      <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
