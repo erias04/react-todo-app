@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header title='erias ToDo App' onAdd={() => setShowAddTask(!showAddTask)} />
+      <Header title='erias ToDo App' onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
       {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
