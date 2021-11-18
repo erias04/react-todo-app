@@ -1,20 +1,17 @@
 import Button from './Button';
 
-const Header = (props) => {
+const Header = ({ title, onAdd }) => {
 
-    const onClick = () => {
-        console.log('Button clicked');
-    }
 
     return (
         <header className='header'>
-            <h1 className="header">{props.title}</h1>
-            <Button color="black" text='Add' onClick={onClick} />
+            <h1 className="header">{title}</h1>
+            <Button color="black" text='Add' onClick={onAdd} />
         </header>
     )
 }
 
-Header.defaultProps = {
+Header.defaultTitle = {
     title: 'erias ToDo App',
   }
 
