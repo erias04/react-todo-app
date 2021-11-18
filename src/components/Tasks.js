@@ -1,7 +1,7 @@
 import Task from './Task'
 
 const Tasks = ({ tasks, onDelete, onToggle }) => {
-
+    // name 'task' is just randomly chosen
     return (
         <>
           {tasks.map((task) => (
