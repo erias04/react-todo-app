@@ -7,7 +7,8 @@ import Footer from './components/Footer'
 import About from './components/About'
 
 function App() {
-  const [showAddTask, setShowAddTask] = useState (false)
+  const [showAddTask, setShowAddTask] = useState (false);
+  const [subdomain, setSubDomain] = useState(null);
 
   const [tasks, setTasks] = useState([])
 
@@ -77,27 +78,40 @@ function App() {
 
   }
 
-  return (
-    <Router>
-      <div className="container">
-        <Header title='erias ToDo App' onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-        <Routes>
-          <Route path='/' exact element={
-            <>
-              {showAddTask ? <AddTask onAdd={addTask} /> : ''}
-              {tasks.length > 0 ? (
-                <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-              ) : (
-                'You are outTasking, get some hobbies'
-              )}
-            </>
-          } />
-          <Route path='about' element={<About />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
+  useEffect(() => {
+    const host = window.location.host;
+    const arr = host.split('.').slice(0, host.includes('localhost') ? -1 : -2);
+    if (arr.length > 0) setSubDomain(arr[0]);
+  }, []);
+
+  if (subdomain) {
+    return(
+    <h1>You are on the subdomain {subdomain}</h1>
+    );
+  } else {
+    return (
+      <Router>
+        <div className="container">
+          <Header title='erias ToDo App' onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+          <Routes>
+            <Route path='/' exact element={
+              <>
+                {showAddTask ? <AddTask onAdd={addTask} /> : ''}
+                {tasks.length > 0 ? (
+                  <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+                ) : (
+                  'You are outTasking, get some hobbies'
+                )}
+              </>
+            } />
+            <Route path='about' element={<About />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+
 }
 
 export default App;
