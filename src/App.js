@@ -81,13 +81,17 @@ function App() {
     <Router>
       <div className="container">
         <Header title='erias ToDo App' onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-        {showAddTask ? <AddTask onAdd={addTask} /> : ''}
-        {tasks.length > 0 ? (
-          <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-        ) : (
-          'You are outTasking, get some hobbies'
-        )}
         <Routes>
+          <Route path='/' exact element={
+            <>
+              {showAddTask ? <AddTask onAdd={addTask} /> : ''}
+              {tasks.length > 0 ? (
+                <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+              ) : (
+                'You are outTasking, get some hobbies'
+              )}
+            </>
+          } />
           <Route path='about' element={<About />} />
         </Routes>
         <Footer />
