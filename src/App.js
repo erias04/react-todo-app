@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
@@ -87,6 +87,9 @@ function App() {
         ) : (
           'You are outTasking, get some hobbies'
         )}
+        <Routes>
+          <Route path='about' element={<About />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
