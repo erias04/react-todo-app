@@ -84,9 +84,14 @@ function App() {
     if (arr.length > 0) setSubDomain(arr[0]);
   }, []);
 
-  if (subdomain) {
-    return(
-    <h1>You are on the subdomain {subdomain}</h1>
+  if (subdomain === 'about') {
+    return (
+      <Router>
+        <div>
+          <h1>You are on the subdomain {subdomain}</h1>
+          <About />
+        </div>
+      </Router>
     );
   } else {
     return (
